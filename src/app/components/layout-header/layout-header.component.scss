@@ -1,0 +1,193 @@
+.top-header {
+  background: #0F1B2D;
+  padding: 1.125rem 1.75rem; /* 18px 28px */
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  width: 98%;
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.07);
+}
+
+/* ----------------------------------
+   ROW 1 — Breadcrumbs + Icons
+-----------------------------------*/
+.row-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 0.5rem; /* 8px */
+  align-items: center;
+  font-size: 0.9375rem; /* 15px */
+}
+
+.back-arrow {
+  font-size: 1.25rem; /* 20px */
+  opacity: 0.8;
+  margin-right: 0.375rem; /* 6px */
+  cursor: pointer;
+}
+
+.crumb {
+  opacity: 0.7;
+}
+
+.sep {
+  opacity: 0.4;
+}
+
+.current {
+  font-weight: 600;
+}
+
+/* Right side icons */
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5625rem; /* 25px */
+}
+
+.chat-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 0.25rem; /* 4px */
+
+  .badge {
+    background: #ff3b3b;
+    color: #fff;
+    font-size: 0.625rem; /* 10px */
+    padding: 0.0625rem 0.375rem; /* 1px 6px */
+    border-radius: 0.75rem; /* 12px */
+    position: absolute;
+    top: -0.375rem; /* -6px */
+    right: 0.75rem; /* 12px */
+  }
+
+  .label {
+    opacity: 0.7;
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+.icon {
+  font-size: 1.5625rem; /* 25px */
+  cursor: pointer;
+  opacity: 0.75;
+  transition: 0.2s;
+}
+
+.icon:hover {
+  opacity: 1;
+}
+
+.logo img {
+  height: 1.5625rem; /* 25px */
+  margin-right: 0.3125rem; /* 5px */
+}
+
+.row-2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 16px */
+  margin-top: 1.125rem; /* 18px */
+}
+
+/* Header Buttons */
+.header-buttons {
+  display: flex;
+  gap: 0.75rem; /* 12px */
+
+  .btn {
+    background: transparent;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+    padding: 0.5rem 1.125rem; /* 8px 18px */
+    border-radius: 0.5rem; /* 8px */
+    color: #b7bdc8;
+    font-size: 0.875rem; /* 14px */
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .btn.active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+
+  .btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+  }
+}
+
+/* SEARCH BAR */
+.search-area {
+  position: relative;
+
+  input {
+    background: #1E293B;
+    color: #fff;
+    padding: 0.625rem 2.5rem 0.625rem 0.875rem; /* 10px 40px 10px 14px */
+    border: 0.0625rem solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.625rem; /* 10px */
+    width: 15rem; /* 240px */
+    outline: none;
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 0.75rem; /* 12px */
+    top: 0.5625rem; /* 9px */
+    font-size: 1.125rem; /* 18px */
+    opacity: 0.6;
+  }
+}
+
+/* DATE BUTTON */
+.date-btn {
+  background: #1E293B;
+  padding: 0.625rem 1.125rem; /* 10px 18px */
+  border-radius: 0.625rem; /* 10px */
+  border: 0.0625rem solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.875rem; /* 14px */
+  cursor: pointer;
+}
+
+/* FILTER BUTTON */
+.filter-btn {
+  background: #1E293B;
+  padding: 0.625rem 1rem; /* 10px 16px */
+  border-radius: 0.625rem; /* 10px */
+  border: 0.0625rem solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  display: flex;
+  gap: 0.5rem; /* 8px */
+  align-items: center;
+  cursor: pointer;
+
+  .filter-icon {
+    opacity: 0.8;
+  }
+}
+
+/* AUTO ASSIGN — GRADIENT BUTTON */
+.auto-assign-btn {
+  background: linear-gradient(90deg, #7A3BE2, #4FC3FF);
+  padding: 0.625rem 1.5rem; /* 10px 24px */
+  border-radius: 0.75rem; /* 12px */
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9375rem; /* 15px */
+  cursor: pointer;
+  box-shadow: 0 0 0.75rem rgba(79, 195, 255, 0.35);
+  transition: 0.2s;
+}
+
+.auto-assign-btn:hover {
+  transform: translateY(-0.0625rem); /* -1px */
+}

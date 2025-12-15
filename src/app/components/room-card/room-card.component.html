@@ -1,0 +1,18 @@
+<div class="room-card" [ngClass]="room.status">
+  <div class="top">
+    <div class="room-number">{{ room.number }}</div>
+
+    <div class="icons">
+      <span class="icon">👤</span>
+      <span class="icon">🧹</span>
+      <span class="icon">🔧</span>
+      <span class="icon">🛎️</span>
+    </div>
+  </div>
+
+  <div class="type">{{ room.type }}</div>
+
+  @if (room.tag) {
+    <div class="tag">{{ room.tag }}</div>
+  }
+</div>

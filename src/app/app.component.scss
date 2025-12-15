@@ -1,0 +1,26 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #0D1628 !important;
+  font-family: 'Inter', sans-serif;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background: #f5f7fa;
+  font-family: 'Inter', sans-serif;
+}
+
+.main-area {
+  flex: 1;
+  margin-left: 4.875rem; /* 78px */
+  display: flex;
+  flex-direction: column;
+}
+
+.content-area {
+  padding: 1.25rem 1.625rem; /* 20px 26px */
+  overflow-y: auto;
+}

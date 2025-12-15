@@ -1,0 +1,110 @@
+/* PAGE BACKGROUND */
+.floors-wrapper {
+  background: #f5f7fa;
+  padding: 1rem 1.25rem 2.5rem; /* 16px 20px 40px */
+}
+
+/* FLOOR BLOCK */
+.floor-section {
+  background: #ffffff;
+  border-radius: 0.75rem;        /* 12px */
+  padding: 0.875rem 1rem 1.125rem; /* 14px 16px 18px */
+  margin-bottom: 1.25rem;        /* 20px */
+}
+
+/* FLOOR HEADER */
+.floor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.875rem; /* 14px */
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem; /* 6px */
+  }
+
+  .chevron {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .title {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+  }
+
+  .right {
+    font-size: 0.75rem; /* 12px */
+    color: #6b7280;
+  }
+}
+
+/* GRID — IDENTICAL LAYOUT */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 10rem); /* 160px */
+  gap: 6.875rem; /* 110px */
+}
+
+/* ROOM CARD */
+.room-card {
+  width: 12.5rem;  /* 200px */
+  height: 5.75rem; /* 92px */
+
+  border-radius: 0.9375rem; /* 15px */
+  padding: 0.75rem; /* 12px */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+
+  &.cleaned  { background: #dcfce7; }
+  &.dirty    { background: #fee2e2; }
+  &.inspect  { background: #e8f0ff; }
+  &.progress { background: #fff4cc; }
+}
+
+/* TOP ROW */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-no {
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 700;
+}
+
+.icons {
+  display: flex;
+  gap: 0.375rem; /* 6px */
+  font-size: 0.875rem; /* 14px */
+  opacity: 0.75;
+}
+
+/* ROOM TYPE */
+.type {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem; /* 12px */
+  color: #374151;
+}
+
+/* TAG */
+.tag {
+  position: absolute;
+  bottom: 0.5rem; /* 8px */
+  right: 0.625rem; /* 10px */
+
+  font-size: 0.6875rem; /* 11px */
+  font-weight: 700;
+
+  &.dnd {
+    color: #dc2626;
+  }
+}
