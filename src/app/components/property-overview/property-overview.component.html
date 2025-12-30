@@ -5,18 +5,24 @@
     <h2>Property Overview</h2>
 
     <div class="header-actions">
-      <button class="tab">Overview</button>
-      <button class="tab active">Chart View</button>
-
-      <div class="search">
-        <span>🔍</span>
-        <input type="text" placeholder="Search" />
-        
+      <div class="tabs">
+<div class="card flex justify-center">
+    <p-selectbutton [options]="stateOptions" [(ngModel)]="value" optionLabel="label" optionValue="value" aria-labelledby="basic" />
+</div>
       </div>
 
-      <button class="pill">25 October 2024</button>
-      <button class="pill"><img src="header/filter.png" > Filters</button>
-      <button class="auto">Auto Assign <img src="header/star.png" > </button>
+  <div class="search-box">
+    <img src="header/search.svg" alt="search" />
+    <input type="text" placeholder="Search" />
+  </div>
+
+
+<div class="card flex justify-center">
+    <p-datepicker [(ngModel)]="date" appendTo="body" dateFormat="dd MM yy"  /> 
+</div>
+
+      <button class="pill"><img src="header/filter2.svg" > Filters</button>
+      <button class="auto">Auto Assign <img src="header/AIReco.svg" > </button>
     </div>
   </div>
 
@@ -36,44 +42,57 @@
           <div class="seg service" style="width:1%">1%</div>
         </div>
 
-        <div class="legend">
-          <span><i class="dirty"></i> Dirty</span>
-          <span><i class="progress"></i> In Progress</span>
-          <span><i class="cleaned"></i> Cleaned</span>
+<div class="legend">
+  <span><i class="dirty"></i> Dirty</span>
+  <span><i class="progress"></i> In Progress</span>
+  <span><i class="cleaned"></i> Cleaned</span>
 
-      
-          <span><i class="inspect"></i> Inspect</span>
-          <span><i class="service"></i> Out of Service</span>
-          <span><i class="order"></i> Out of Order</span>
-        </div>
-      </div>
+  <span><i class="inspect"></i> Inspect</span>
+  <span><i class="service"></i> Out of Service</span>
+  <span><i class="order"></i> Out of Order</span>
+</div>
+
+</div>
 <div class="stat-card occupancy-card">
-  <div class="stat-text">
-    <div class="stat-title">Occupancy</div>
-    <div class="stat-value">
-      232 <span>/ 290</span>
-    </div>
+  <div class="stat-header">
+    <span class="stat-title">Occupancy</span>
+
+    <!-- RIGHT ICON / RING -->
+    <div class="progress-ring">
+  <!-- <svg width="72" height="72">
+    <circle class="bg" cx="36" cy="36" r="30"></circle>
+    <circle class="progress" cx="36" cy="36" r="30"></circle>
+  </svg> -->
+  <!-- <div class="progress-text">25%</div> -->
+
+<span class="stat-icon image-tag"><img src="header/graph25.svg" alt="" style="height: 4.5rem;"></span>
+
+</div>
+
   </div>
 
-  <div class="progress-ring">
-    <svg width="64" height="64">
-      <circle class="bg" cx="32" cy="32" r="26"></circle>
-      <circle class="progress" cx="32" cy="32" r="26"></circle>
-    </svg>
-    <div class="progress-text">25%</div>
+  <div class="stat-value">
+    232 <span>/ 290</span>
   </div>
 </div>
+
 
 
       <!-- ARRIVAL -->
       <div class="stat-card">
         <div class="stat-header">
            <span class="stat-title">Arrival</span>
-           <span class="stat-icon"><img src="header/arrival.png" alt=""></span>
+           <span class="stat-icon image-tag"><img src="header/a1.svg" alt=""></span>
       </div>
 
-          <h3>42</h3>
-        <small class="green">+2.0% From last week</small>
+           <div class="stat-center">
+            <h3>42</h3>
+            </div>
+<div class="stat-footer green arrival-footer">
+  <span class="delta">+2.0%</span>
+  <span class="period">From last week</span>
+</div>
+
         
         
       </div>
@@ -82,20 +101,39 @@
       <div class="stat-card">
         <div class="stat-header">
            <span class="stat-title">Departure</span>
-        <span class="stat-icon"><img src="header/departure.png" alt=""></span>
+        <span class="stat-icon image-tag"><img src="header/d1.svg" alt=""></span>
         </div>
-        <h3>42</h3>
-        <small class="red">-2.1% From last week</small>
+          <div class="stat-center">
+           <h3>42</h3>
+           </div>
+           
+        
+<div class="stat-footer red arrival-footer">
+  <span class="delta">-2.1%</span>
+  <span class="period">From last week</span>
+</div>
+
+
       </div>
 
       <!-- GUEST REQUEST -->
       <div class="stat-card">
        <div class="stat-header">
            <span class="stat-title">Guest Request</span>
-        <span class="stat-icon"><img src="header/guest.png" alt=""></span>
+        <span class="stat-icon image-tag"><img src="header/guest2.svg" alt=""></span>
         </div>
+       <div class="stat-center">
         <h3>42</h3>
-        <small class="green">4.5 min Avg. service time</small>
+        </div>
+
+     
+
+        <div class="stat-footer green arrival-footer">
+  <span class="delta">4.5%</span>
+  <span class="period">Avg. service time</span>
+</div>
+
+
       </div>
 
     </div>

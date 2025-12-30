@@ -1,26 +1,62 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RoomService } from '../../core/services/room.service';
-import { RoomCardComponent } from '../room-card/room-card.component';
+
 
 @Component({
   selector: 'app-floor-list',
   standalone: true,
-  imports: [CommonModule],
+  
   templateUrl: './floor-list.component.html',
-  styleUrls: ['./floor-list.component.scss']
+  styleUrls: ['./floor-list.component.scss'],
 })
 export class FloorListComponent {
-  floors = [1, 2, 3, 4 ];
-  roomsMap = new Map<number, any[]>();
 
-  constructor(private rs: RoomService) {
-    this.rs.rooms$.subscribe(rooms => {
-      this.roomsMap.clear();
-      rooms.forEach(r => {
-        if (!this.roomsMap.has(r.floor)) this.roomsMap.set(r.floor, []);
-        this.roomsMap.get(r.floor)!.push(r);
-      });
-    });
-  }
+  floors = [
+    {
+      number: 1,
+      summary: '10 Rooms\n5 Cleaned, 3 Dirty, 2 Inspect',
+
+      rooms: [
+        { no: '1200', type: 'Deluxe', status: 'cleaned',statusText: 'DND' },
+        { no: '1200', type: 'Deluxe', status: 'dirty' },
+        { no: '1200', type: 'Deluxe', status: 'inspect' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned',statusText: 'DND' },
+        { no: '1200', type: 'Deluxe', status: 'dirty' ,statusText: 'DND'},
+        { no: '1200', type: 'Deluxe', status: 'dirty',statusText: 'DND' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'inspect',statusText: 'DND' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' ,statusText: 'DND'},
+      ]
+    },
+    {
+      number: 1,
+      summary: '8 Rooms\n7 Cleaned, 1 Inspect',
+
+      rooms: [
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned',statusText: 'DND' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'inspect',statusText: 'DND' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+      ]
+    },
+    {
+      number: 1,
+     summary: '7 Rooms\n4 Cleaned, 3 Dirty',
+
+      rooms: [
+        { no: '1200', type: 'Deluxe', status: 'cleaned'},
+        { no: '1200', type: 'Deluxe', status: 'dirty' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'dirty' },
+        { no: '1200', type: 'Deluxe', status: 'cleaned', },
+        { no: '1200', type: 'Deluxe', status: 'cleaned' },
+        { no: '1200', type: 'Deluxe', status: 'dirty' ,statusText: 'DND'},
+      ]
+    }
+  ];
+
 }

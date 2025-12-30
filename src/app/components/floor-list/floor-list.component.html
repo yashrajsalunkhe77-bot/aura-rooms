@@ -1,343 +1,72 @@
+<div class="floors-wrapper">
+  <div class="floors-container">
 
+    @for (floor of floors; track $index) {
+      <section class="floor">
 
-  <!-- FLOOR 1 -->
-  <div class="floor-section">
-    <div class="floor-header">
-      <div class="left">
-        <span class="chevron">⌄</span>
-        <span class="title">FLOOR: 1</span>
-      </div>
-      <div class="right">10 Rooms — 5 Cleaned, 3 Dirty, 2 Inspect</div>
-    </div>
+        <header class="floor-header">
+          <div class="left">
+            <span class="chevron">⌄</span>
+            <span class="title">FLOOR: {{ floor.number }}</span>
+          </div>
+          <div class="right">{{ floor.summary }}</div>
 
-    <div class="rooms-grid">
-      <div class="room-card cleaned">
-        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
+        </header>
+
+        <div class="rooms-grid">
+
+          @for (room of floor.rooms; track $index) {
+            <div
+              class="room-card"
+              [class.cleaned]="room.status === 'cleaned'"
+              [class.dirty]="room.status === 'dirty'"
+              [class.inspect]="room.status === 'inspect'"
+            >
+
+              <!-- TOP -->
+              <div class="card-top">
+                <div class="left-info">
+                  <span class="room-no">{{ room.no }}</span>
+                  <span class="room-type">{{ room.type }}</span>
+                </div>
+
+                <div class="top-icons">
+                  <img src="/header/a2.svg">
+                  <img src="/header/s2.svg">
+                  <img src="/header/d2.svg">
+                </div>
+              </div>
+
+              <!-- BOTTOM -->
+               
+              <div class="card-bottom">
+                <div class="bottom-icons">
+                  <img src="/header/f1.svg">
+                  <img src="/header/m1.svg">
+                </div>
+
+                @if (room.statusText) {
+                  
+                  <span
+                    class="status-text"
+                    [class.dnd]="room.statusText === 'DND'"
+                    [class.dnd]="room.statusText === 'DND'"
+                    
+                  >
+                    {{ room.statusText }}
+                  </span>
+                  
+                }
+
+                
+              </div>
+
             </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-        
-      </div>
+          }
 
-      <div class="room-card dirty">
-        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
         </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-        
-      </div>
-      
+      </section>
+    }
 
-      <div class="room-card inspect">
-                <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-        
-      </div>
-
-      
-      <div class="room-card cleaned">
-                       <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      <div class="room-card dirty">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      <div class="room-card dirty">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      <div class="room-card cleaned">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-       </div>
-    </div>
-
-  <div class="floor-section">
-    <div class="floor-header">
-      <div class="left">
-        <span class="chevron"></span>
-      </div>
-      <div class="right">8 Rooms — 7 Cleaned, 1 Inspect</div>
-    </div>
-
-    <div class="rooms-grid">
-      <div class="room-card cleaned">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-      
-
-      <div class="room-card inspect">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      <div class="rooms-grid">
-      <div class="room-card cleaned">
-                <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-     </div>
-     </div>
-    
-  
-    <!-- FLOOR 1 -->
-      <div class="floor-section">
-       <div class="floor-header">
-        <div class="left">
-        <span class="chevron">⌄</span>
-        <span class="title">FLOOR: 1</span>
-        </div>
-        <div class="right">10 Rooms — 5 Cleaned, 3 Dirty, 2 Inspect</div>
-       </div>
-
-    <div class="rooms-grid">
-      <div class="room-card cleaned">
-                <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      <div class="rooms-grid">
-      <div class="room-card cleaned">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      <div class="rooms-grid">
-      <div class="room-card cleaned">
-                       <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      
-      <div class="room-card cleaned">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-<div class="rooms-grid">
-      <div class="room-card cleaned">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-      <div class="rooms-grid">
-      <div class="room-card cleaned">
-                       <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-
-
-      <div class="room-card inspect">
-                        <div class="top">
-          <span class="room-no">1200</span>
-          <div class="icons">
-            <img src="header/arrival1.png" height="15px" width="15px">
-            <img src="header/stay1.png" height="15px" width="15px">
-            <img src="header/arrival2.png" height="15px" width="15px">
-            </div>
-        </div>
-        <div class="op">Deluxe</div>
-        <div class="type">
-        <img src="header/guest1.png" height="15px" width="15px">
-        <img src="header/nutbolt.png" height="15px" width="15px">
-        <img src="header/dnd.png" height="15px" width="15px">
-       </div>
-      </div>
-    </div>
-    
+  </div>
 </div>
-
- 

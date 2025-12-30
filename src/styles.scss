@@ -1,8 +1,57 @@
 
-/* You can add global styles to this file, and also import other style files */
+
 body, html {
   margin: 0;
   padding: 0;
   background-color: #0D1628 !important;
   font-family: 'Inter', sans-serif;
 }
+  
+ 
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.layout,
+.main-area,
+.content-area,
+.property-overview {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+.sidebar {
+  box-sizing: border-box;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+.app-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.property-overview,
+.top-header
+ {
+  flex: 0 0 auto !important;
+}
+
+.floors-container
+ {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important; 
+  // background: #e6ebf6 !important;
+  height: calc(100vh - 320px) !important; 
+  scrollbar-width: thin !important;   
+}
+
