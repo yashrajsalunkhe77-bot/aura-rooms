@@ -1,72 +1,74 @@
 <div class="floors-wrapper">
   <div class="floors-container">
 
-    @for (floor of floors; track $index) {
-      <section class="floor">
+    <p-accordion [multiple]="true">
 
-        <header class="floor-header">
-          <div class="left">
-            <span class="chevron">⌄</span>
-            <span class="title">FLOOR: {{ floor.number }}</span>
-          </div>
-          <div class="right">{{ floor.summary }}</div>
+      @for (floor of floors; track $index) {
 
-        </header>
+        <p-accordion-panel [value]="$index">
 
-        <div class="rooms-grid">
-
-          @for (room of floor.rooms; track $index) {
-            <div
-              class="room-card"
-              [class.cleaned]="room.status === 'cleaned'"
-              [class.dirty]="room.status === 'dirty'"
-              [class.inspect]="room.status === 'inspect'"
-            >
-
-              <!-- TOP -->
-              <div class="card-top">
-                <div class="left-info">
-                  <span class="room-no">{{ room.no }}</span>
-                  <span class="room-type">{{ room.type }}</span>
-                </div>
-
-                <div class="top-icons">
-                  <img src="/header/a2.svg">
-                  <img src="/header/s2.svg">
-                  <img src="/header/d2.svg">
-                </div>
+          <!-- FLOOR HEADER -->
+          <p-accordion-header>
+            <header class="floor-header">
+              <div class="left">
+                <span class="title">FLOOR: {{ floor.number }}</span>
               </div>
+              <div class="right">{{ floor.summary }}</div>
+            </header>
+          </p-accordion-header>
 
-              <!-- BOTTOM -->
-               
-              <div class="card-bottom">
-                <div class="bottom-icons">
-                  <img src="/header/f1.svg">
-                  <img src="/header/m1.svg">
-                </div>
+          <!-- FLOOR CONTENT -->
+          <p-accordion-content>
 
-                @if (room.statusText) {
-                  
-                  <span
-                    class="status-text"
-                    [class.dnd]="room.statusText === 'DND'"
-                    [class.dnd]="room.statusText === 'DND'"
-                    
-                  >
-                    {{ room.statusText }}
-                  </span>
-                  
-                }
+            <div class="rooms-grid">
+              @for (room of floor.rooms; track $index) {
 
-                
-              </div>
+                <p-card
+                  class="room-card"
+                  [class.cleaned]="room.status === 'cleaned'"
+                  [class.dirty]="room.status === 'dirty'"
+                  [class.inspect]="room.status === 'inspect'"
+                >
 
+                  <div class="card-top">
+                    <div class="left-info">
+                      <span class="room-no">{{ room.no }}</span>
+                      <span class="room-type">{{ room.type }}</span>
+                    </div>
+
+                    <div class="top-icons">
+                      <img src="/header/a2.svg">
+                      <img src="/header/s2.svg">
+                      <img src="/header/d2.svg">
+                    </div>
+                  </div>
+
+                  <div class="card-bottom">
+                    <div class="bottom-icons">
+                      <img src="/header/f1.svg">
+                      <img src="/header/m1.svg">
+                    </div>
+
+                    @if (room.statusText) {
+                      <span
+                        class="status-text"
+                        [class.dnd]="room.statusText === 'DND'"
+                      >
+                        {{ room.statusText }}
+                      </span>
+                    }
+                  </div>
+
+                </p-card>
+              }
             </div>
-          }
 
-        </div>
-      </section>
-    }
+          </p-accordion-content>
+
+        </p-accordion-panel>
+      }
+
+    </p-accordion>
 
   </div>
 </div>

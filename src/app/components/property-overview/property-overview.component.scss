@@ -3,7 +3,7 @@
   background: #0d1628;
   color: #fff;
   padding-bottom: 2rem; 
-  
+  flex: 0 0 auto;
   
 }
 
@@ -12,7 +12,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1.65rem;
+  padding-left: .65rem;
+
+
   
 }
 
@@ -87,7 +89,8 @@
 .search-box {
   background: #1f2937;              
   height: 2.5rem;                   
-  min-width: 18rem;                 
+   width: 18rem;
+  max-width: 100%;                
   padding: 0 1rem;                  
   border-radius: 0.625rem;          
 
@@ -147,7 +150,9 @@
 /* AUTO BUTTON */
 .auto {
   height: 2.5rem; /* 40px */
-  min-width: 13rem; /* 140px */
+   width: 13rem;
+  max-width: 100%;
+ /* 140px */
 
   background: linear-gradient(90deg, #B721FF, #21D4FD);
   padding: 0 1.25rem; /* 20px */
@@ -171,9 +176,10 @@
 .overview-card {
   background: #0f1b2d;
   border-radius: 1.25rem; /* 20px */
-    padding-right: 1.75rem; 
-    padding-left: 1.65rem;
+    padding-right: 1.6rem; 
+    padding-left: .65rem;
     min-width: 18rem;
+    
 
   
 }
@@ -181,16 +187,17 @@
 /* ROW */
 .overview-row {
   display: flex;
-  align-items: center;
-  gap: 1rem; /* 16px */
-  margin-right: 0;
-
-
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* PROGRESS CARD */
 .progress-card {
   flex: 2;
+   
+  min-width: 0;
   height: 8.5rem; /* 100px */
   background: #1e293b;
   padding: 0.625rem 0.875rem; /* 10px 14px */
@@ -268,8 +275,10 @@
 
 /* STAT CARDS */
 .stat-card {
-  width: 15.75rem;
+   flex: 1;
+  min-width: 0;       /* VERY IMPORTANT */
   height: 8.5rem;
+
   background: #1e293b;
   border-radius: 0.75rem;
   padding: 0.75rem 0.875rem;
@@ -540,6 +549,8 @@
   color: #f1eeee !important;
   font-size: 0.975rem; /* 14px */
   padding-inline: var();
+   border: none !important;
+  
   }
 
 
@@ -553,19 +564,12 @@
 ::ng-deep .p-togglebutton-checked .p-togglebutton-content {
 
 background: none;
+ background: #090909 !important;
 
 }
 
 
-::ng-deep .p-togglebutton-checked .p-togglebutton-content{
-
-  background: #090909 !important;
-}
-
- ::ng-deep .p-inputtext{
-  border: none !important;
-  
- }
+ 
 
  ::ng-deep.p-togglebutton{
   border: none !important;
@@ -573,3 +577,7 @@ background: none;
 
  }
 
+::ng-deep .p-card-body{
+  padding: 0 !important;
+  color: white !important;
+}

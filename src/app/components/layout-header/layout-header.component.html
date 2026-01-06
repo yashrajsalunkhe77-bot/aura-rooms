@@ -1,43 +1,48 @@
-<header class="top-header">
-
+<!-- <header class="top-header">
   
-  <div class="row-1">
-    <div class="breadcrumbs">
-      <img src="header/arrowleft1.svg" alt="" class="arrow12">
+</div> -->    
+
+
+<p-toolbar class="top-header-toolbar">
+  <!-- LEFT -->
+  <ng-template pTemplate="start">
+    <div class="toolbar-left">
+      <img src="header/arrowleft1.svg" class="arrow12" />
+
       <span class="crumb">Unicorn Groups</span>
       <span class="sep">/</span>
       <span class="crumb">Radiant Retreat</span>
       <span class="sep">/</span>
       <span class="current">Task Management</span>
     </div>
+  </ng-template>
 
-    <div class="right-icons">
-      <div class="logo">
-        <img src="header/AuraLogo.svg" >
-      </div>
+  <!-- RIGHT -->
+  <ng-template pTemplate="end">
+    <div class="toolbar-right">
+      <img src="header/AuraLogo.svg" class="icon-img" />
 
       <div class="chat-icon">
-        <div class="logo">
-          <img src="header/chat3.svg" >
-          </div>
-         </div>
-
-      <div class="right-icons">
-      <div class="logo">
-        <img src="header/chaticon.svg" >
-      </div>
+        <img src="header/chat3.svg" class="icon-img" />
+        
       </div>
 
-      <div class="right-icons">
-      <div class="logo">
-        <img src="header/menubar1.svg" >
-      </div>
-      </div>
-      
-
+      <img src="header/chaticon.svg" class="icon-img" />
+      <img src="header/menubar1.svg" class="icon-img" />
     </div>
-  </div>
+  </ng-template>
+</p-toolbar>
 
-  
 
-</header>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,12 +5,16 @@
   <div class="main-area">
 
     <!-- TOP NAVBAR -->
-    <app-layout-header></app-layout-header>
+     <div class="sticky-header">
+       <app-layout-header ></app-layout-header>
+     </div>
 
     <div class="page-container">
 
       <!-- PROPERTY OVERVIEW -->
-      <app-property-overview></app-property-overview>
+       <div class="sticky-tool">
+         <app-property-overview></app-property-overview>
+       </div>
 
       <!-- FLOOR LIST WITH ROOM CARDS -->
       <app-floor-list></app-floor-list>

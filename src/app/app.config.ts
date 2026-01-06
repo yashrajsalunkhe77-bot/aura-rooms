@@ -1,5 +1,4 @@
 import { ApplicationConfig } from '@angular/core';
-// import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
